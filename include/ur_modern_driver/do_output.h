@@ -20,14 +20,14 @@
 #define UR_DO_OUTPUT_H_
 
 #ifdef ROS_BUILD
-#include <ros/ros.h>
+#  include <ros/ros.h>
 #endif
 #include <string>
 
-void print_debug(const std::string& inp);
-void print_info(const std::string& inp);
-void print_warning(const std::string& inp);
-void print_error(const std::string& inp);
-void print_fatal(const std::string& inp);
+void print_debug(const std::string & inp);
+void print_info(const std::string & inp);
+void print_warning(const std::string & inp);
+void print_error(const std::string & inp);
+void print_fatal(const std::string & inp);
 
 #endif /* UR_DO_OUTPUT_H_ */
