@@ -9,8 +9,19 @@ set(ur_modern_driver_SRC
   ur_realtime_communication.cpp
 )
 
-add_library(ur_modern_driver SHARED ${ur_modern_driver_SRC})
+set(ur_modern_driver_HDR
+  ${PROJECT_SOURCE_DIR}/include/ur_modern_driver/do_output.h
+  ${PROJECT_SOURCE_DIR}/include/ur_modern_driver/robot_state.h
+  ${PROJECT_SOURCE_DIR}/include/ur_modern_driver/robot_state_RT.h
+  ${PROJECT_SOURCE_DIR}/include/ur_modern_driver/ur_communication.h
+  ${PROJECT_SOURCE_DIR}/include/ur_modern_driver/ur_driver.h
+  ${PROJECT_SOURCE_DIR}/include/ur_modern_driver/ur_realtime_communication.h
+)
+
+add_library(ur_modern_driver SHARED ${ur_modern_driver_SRC} ${ur_modern_driver_HDR})
 target_include_directories(ur_modern_driver PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include>)
+
+install(FILES ${ur_modern_driver_HDR} DESTINATION include/ur_modern_driver)
 
 install(TARGETS ur_modern_driver
   EXPORT ur_modern_driverTargets
