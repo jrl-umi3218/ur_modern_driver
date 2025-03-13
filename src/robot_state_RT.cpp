@@ -17,6 +17,7 @@
  */
 
 #include "ur_modern_driver/robot_state_RT.h"
+#include <cstdio>
 
 namespace
 {
