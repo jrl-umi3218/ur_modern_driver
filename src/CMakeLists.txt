@@ -1,5 +1,3 @@
-cmake_minimum_required(VERSION 3.1)
-
 set(ur_modern_driver_SRC
   do_output.cpp
   robot_state.cpp
